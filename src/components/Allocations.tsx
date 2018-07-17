@@ -2,17 +2,14 @@ import "babel-polyfill";
 import * as React from "react";
 import ProjectNameContainer from "./ProjectNameContainer";
 import {AllocationsProps} from "./props";
+import {ProjectSelection} from "./ProjectSelection";
+import {EmptyProjectSelection} from "./EmptyProjectSelection";
 
 export const Allocations = (props: AllocationsProps) => {
     const projectNames = () => props.projects.map(project => <ProjectNameContainer project={project}/>);
     const pivotNames = () => props.pivots.map(pivot => <h3 key={pivot.firstName + pivot.lastName}>{pivot.firstName} {pivot.lastName}</h3>);
-    const emptyProjectSelection = () => <div>You haven't selected a project yet</div>;
-    const projectSelection = (projectID: number) => {
-       const project = props.projects.find(project => project.id === projectID);
-       return (
-         <div>Who wants to work on {project.name}?</div>
-       );
-    };
+    const emptyProjectSelection = () => <EmptyProjectSelection/>;
+    const projectSelection = (projectID: number) => <ProjectSelection projects={props.projects} projectID={projectID}/>
     return (
         <div>
             <h1>Projects</h1>
