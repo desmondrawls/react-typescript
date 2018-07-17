@@ -1,5 +1,5 @@
-export enum Challenge { refactoring, appTx, enablement, stakeholderManagement, innovation, stamina }
-export enum TeamRole { productManager, engineer, anchor, designer }
-export enum CompanyRole { directContributor, intern }
+export enum Challenge { REFACTORING, APP_TX, ENABLEMENT, STAKEHOLDER_MANAGERMENT, INNOVATION, STAMINA }
+export enum TeamRole { PRODUCT_MANAGER, ENGINEER, ANCHOR, DESIGNER }
+export enum CompanyRole { DIRECT_CONTRIBUTOR, INTERN, MANAGER }
 export interface Pivot { firstName: string, lastName: string, teamRole: TeamRole, companyRole: CompanyRole, desiredChallenges: Challenge[]}
 export interface Project { name: string, client: string, challenges: Challenge[]}

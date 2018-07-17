@@ -7,12 +7,13 @@ import {createStore} from "redux";
 import {pivots, projects} from "./store/initialState";
 import {allocationsStore} from "./store/reducer";
 import {Provider} from 'react-redux';
+import AllocationsContainer from "./components/AllocationsContainer";
 
 const store = createStore(allocationsStore)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Allocations projects={projects} pivots={pivots}/>
+    <AllocationsContainer/>
   </Provider>,
   document.getElementById("app")
 );
