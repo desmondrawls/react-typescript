@@ -14,10 +14,13 @@
   "dependencies": {
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.4",
     "babel-polyfill": "^6.26.0",
     "commonjs": "0.0.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "@webpack-cli/init": "0.0.8",

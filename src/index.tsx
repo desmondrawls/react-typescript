@@ -1,28 +1,18 @@
+import "./styles/main.scss";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import "./styles/main.scss";
 
 import {Allocations} from "./components/Allocations";
-import {Challenge, CompanyRole, TeamRole} from "./definitions";
+import {createStore} from "redux";
+import {pivots, projects} from "./store/initialState";
+import {allocationsStore} from "./store/reducer";
+import {Provider} from 'react-redux';
 
-const replaceVehicle = {name: "Replace Vehicle", client: "Farmers", challenges: [Challenge.stamina, Challenge.stakeholderManagement]};
-const foxipedia = {name: "Foxipedia", client: "Fox", challenges: [Challenge.appTx, Challenge.stakeholderManagement]};
-const storeFront = {name: "storeFront", client: "CoreLogic", challenges: [Challenge.refactoring, Challenge.stakeholderManagement]};
-const AIG = {name: "Store Front", client: "CoreLogic", challenges: [Challenge.innovation]};
-const projects = [replaceVehicle, foxipedia, AIG];
-
-const Jonathan = {firstName: "Jonathan", lastName: "Sirlin", teamRole: TeamRole.productManager, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Dan = {firstName: "Dan", lastName: "Kaplan", teamRole: TeamRole.engineer, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Joe = {firstName: "Joe", lastName: "Greubel", teamRole: TeamRole.anchor, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Desmond = {firstName: "Desmond", lastName: "Pompa Alarcón Rawls", teamRole: TeamRole.engineer, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Cari = {firstName: "Cari", lastName: "Dean", teamRole: TeamRole.engineer, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Dirk = {firstName: "Dirk", lastName: "Janssen", teamRole: TeamRole.engineer, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Mallory = {firstName: "Mallory", lastName: "Sirlin", teamRole: TeamRole.engineer, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Paul = {firstName: "Paul", lastName: "Sirlin", teamRole: TeamRole.designer, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const Bryan = {firstName: "Bryan", lastName: "Sirlin", teamRole: TeamRole.designer, companyRole: CompanyRole.directContributor, desiredChallenges: [Challenge.stakeholderManagement]};
-const pivots = [Jonathan, Dan, Joe, Desmond, Cari, Dirk, Mallory, Paul, Bryan];
+const store = createStore(allocationsStore)
 
 ReactDOM.render(
-    <Allocations projects={projects} pivots={pivots}/>,
-    document.getElementById("app")
+  <Provider store={store}>
+    <Allocations projects={projects} pivots={pivots}/>
+  </Provider>,
+  document.getElementById("app")
 );
