@@ -4,9 +4,9 @@ import {AllocationsState} from "./allocationsState";
 
 const replaceVehicle = {id: 1, name: "Replace Vehicle", client: "Farmers", challenges: [Challenge.STAMINA, Challenge.STAKEHOLDER_MANAGERMENT]};
 const foxipedia = {id: 2, name: "Foxipedia", client: "Fox", challenges: [Challenge.APP_TX, Challenge.STAKEHOLDER_MANAGERMENT]};
-const storeFront = {id: 3, name: "storeFront", client: "CoreLogic", challenges: [Challenge.REFACTORING, Challenge.STAKEHOLDER_MANAGERMENT]};
-const AIG = {id: 4, name: "Store Front", client: "CoreLogic", challenges: [Challenge.INNOVATION]};
-export const projects = [replaceVehicle, foxipedia, AIG];
+const storeFront = {id: 3, name: "Store Front", client: "CoreLogic", challenges: [Challenge.REFACTORING, Challenge.STAKEHOLDER_MANAGERMENT]};
+const AIG = {id: 4, name: "Basketball Cooking", client: "AIG", challenges: [Challenge.INNOVATION]};
+export const projects = [replaceVehicle, foxipedia, storeFront, AIG];
 
 const Jonathan = {firstName: "Jonathan", lastName: "Sirlin", teamRole: TeamRole.PRODUCT_MANAGER, companyRole: CompanyRole.DIRECT_CONTRIBUTOR, desiredChallenges: [Challenge.STAKEHOLDER_MANAGERMENT]};
 const Dan = {firstName: "Dan", lastName: "Kaplan", teamRole: TeamRole.ENGINEER, companyRole: CompanyRole.DIRECT_CONTRIBUTOR, desiredChallenges: [Challenge.STAKEHOLDER_MANAGERMENT]};

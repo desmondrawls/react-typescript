@@ -2,6 +2,22 @@ h1 {
   color: hotpink;
 }
 
+.options {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .working {
+  display: flex;
+  justify-content: center;
+}
+
+.prompt {
   color: forestgreen;
+}
+
+$large-space: 50px;
+
+.mtl {
+  margin-top: $large-space;
 }
