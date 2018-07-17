@@ -1,6 +1,5 @@
 import "babel-polyfill";
 import * as React from "react";
-import {Pivot, Project} from "../definitions";
 import ProjectNameContainer from "./ProjectNameContainer";
 import {AllocationsProps} from "./props";
 
@@ -13,14 +12,14 @@ export const Allocations = (props: AllocationsProps) => {
        return (
          <div>Who wants to work on {project.name}?</div>
        );
-    }
+    };
     return (
         <div>
             <h1>Projects</h1>
             {projectNames()}
             <h1>Pivots</h1>
             {pivotNames()}
-            <h1>{props.selectedProject.fold(projectSelection, emptyProjectSelection)}</h1>
+            <h1 className="working">{props.selectedProject.fold(projectSelection, emptyProjectSelection)}</h1>
         </div>
     );
 };
